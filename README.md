@@ -35,7 +35,9 @@ Learning Design Patterns
 ### Adapter
 - [x] TS conceptual example
 - [x] PHP real example
-- [ ] C++ / Java example
+- [ ] C++ example
+- [x] Java example
+- [x] C+ example
 
 
 ## Later
