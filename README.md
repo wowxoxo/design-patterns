@@ -32,6 +32,10 @@ Learning Design Patterns
 - [ ] Real examples
 
 ## Structural patterns
+### Adapter
+- [x] TS conceptual example
+- [x] PHP real example
+- [ ] C++ / Java example
 
 
 ## Later
