@@ -37,7 +37,13 @@ Learning Design Patterns
 - [x] PHP real example
 - [ ] C++ example
 - [x] Java example
-- [x] C+ example
+- [x] C# example
+
+### Bridge
+- [x] TS conceptual example
+- [ ] PHP example (not done)
+- [ ] Java example
+- [ ] Swift example
 
 
 ## Later
