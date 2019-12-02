@@ -45,6 +45,9 @@ Learning Design Patterns
 - [ ] Java example
 - [ ] Swift example
 
+### Composite
+- [x] TS conceptual example
+
 
 ## Later
 - [ ] Add UML schemes
