@@ -134,3 +134,100 @@ class Project2 {
     });
   }
 }
+
+//// 4 interface segregation
+// before
+interface CloudProvider {
+  storeFile(name): void
+  getFile(name): void
+  createServer(region): void
+  listServers(region): void
+  getCDNAddress(): void
+}
+
+class Amazon implements CloudProvider {
+  storeFile(name) { console.log('Implementation here'); }
+  getFile(name) { console.log('Implementation here'); }
+  createServer(region) { console.log('Implementation here'); }
+  listServers(region) { console.log('Implementation here'); }
+  getCDNAddress() { console.log('Implementation here'); }
+}
+
+class Dropbox implements CloudProvider {
+  storeFile(name) { console.log('Implementation here'); }
+  getFile(name) { console.log('Implementation here'); }
+  createServer(region) { 'Blank stub implementation' }
+  listServers(region) { 'Blank stub implementation' }
+  getCDNAddress() { 'Blank stub implementation' }
+}
+
+// after
+interface CloudHostingProvider {
+  createServer(region): void
+  listServers(region): void
+}
+
+interface CDNProvider {
+  getCDNAddress(): void
+}
+
+interface CloudStorageProvider {
+  storeFile(name): void
+  getFile(name): void
+}
+
+class Amazon1 implements CloudHostingProvider, CDNProvider, CloudHostingProvider {
+  storeFile(name) { console.log('Implementation here'); }
+  getFile(name) { console.log('Implementation here'); }
+  createServer(region) { console.log('Implementation here'); }
+  listServers(region) { console.log('Implementation here'); }
+  getCDNAddress() { console.log('Implementation here'); }
+}
+
+class Dropbox1 implements CloudStorageProvider {
+  storeFile(name) { console.log('Implementation here'); }
+  getFile(name) { console.log('Implementation here'); }
+}
+
+//// 5 Dependency inversion
+// before
+class MySQLDatabase {
+  insert() {}
+  update() {}
+  delete() {}
+}
+
+class BudgetReport {
+  private database;
+  open(date) {
+    let base = new MySQLDatabase();
+    base.update()
+  }
+}
+
+// after
+interface Database {
+  insert(): void
+  update(): void
+  delete(): void
+}
+
+class MySQL implements Database {
+  insert() {}
+  update() {}
+  delete() {}
+}
+
+class MongoDB implements Database {
+  insert() {}
+  update() {}
+  delete() {}
+}
+
+class BudgetReport1 {
+  private database : Database;
+  open(date) {
+    this.database = new MySQL();
+  }
+  save() {}
+}

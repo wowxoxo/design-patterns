@@ -41,6 +41,7 @@ Learning Design Patterns
 
 ### Bridge
 - [x] TS conceptual example
+- [x] TS example
 - [ ] PHP example (not done)
 - [ ] Java example
 - [ ] Swift example
