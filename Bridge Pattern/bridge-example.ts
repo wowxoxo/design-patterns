@@ -13,6 +13,9 @@ class TV implements Device {}
 
 class Remote {
   protected device: Device;
+  constructor(device: Device) {
+    this.device = device
+  }
   togglePower() {
     if (this.device.isEnabled()) {
       this.device.disable()
@@ -20,12 +23,17 @@ class Remote {
       this.device.enable()
     }
   }
-  volumeDown() {}
-  volumeUp() {}
-  channelDown() {}
+  volumeDown() {
+    this.device.setVolume(this.device.getVolume() - 10)
+  }
+  volumeUp() {
+    this.device.setVolume(this.device.getVolume() + 10)
+  }
+  channelDown() {
+    this.device.setChannel(this.device.getChannel() - 1)
+  }
   channelUp() {
-    const old = this.device.getChannel()
-    this.device.setChannel(old + 1)
+    this.device.setChannel(this.device.getChannel() + 1)
   }
 }
 
@@ -35,13 +43,10 @@ class AdvancedRemote extends Remote {
   }
 }
 
-class Client {
-  public remote;
-  setRemote(remote) {
-    this.remote = remote;
-  }
-}
+// client code
+const tv = new TV()
+const remote = new Remote(tv)
+remote.togglePower()
 
-const client = new Client()
-client.setRemote(new Remote)
-client.remote.volumeDown()
+const radio = new Radio()
+const remote2 = new AdvancedRemote(radio)
