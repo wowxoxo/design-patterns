@@ -84,7 +84,136 @@ class Product
     $this->price = $price;
   }
 
-  public function getId(): string {  }
+  public function getId(): string { return $this->id; }
+
+  public function getTitle(): string { return $this->title; }
+
+  public function getDescription(): string { return $this->description; }
+
+  public function getImage(): string { return $this->image; }
+
+  public function getPrice(): float { return $this->price; }
 }
 
+interface Renderer
+{
+  public function renderTitle(string $title): string;
+  
+  public function renderTextBlock(string $text): string;
+
+  public function renderImage(string $url): string;
+
+  public function renderLink(string $url, string $title): string;
+
+  public function renderHeader(): string;
+
+  public function renderFooter(): string;
+
+  public function renderParts(array $parts): string;
+}
+
+class HTMLRenderer implements Renderer
+{
+  public function renderTitle(string $title): string
+  {
+    return "<h1>$title</h1>";
+  }
+
+  public function renderTextBlock(string $text): string
+  {
+    return "<div class='text'>$text</div>";
+  }
+
+  public function renderImage(string $url): string
+  {
+    return "<img src='$url'>";
+  }
+
+  public function renderLink(string $url, string $title): string
+  {
+    return "<a href='$url'>$title</a>";
+  }
+
+  public function renderHeader(): string
+  {
+    return "<html><body>";
+  }
+
+  public function renderFooter(): string
+  {
+    return "</body></html>";
+  }
+
+  public function renderParts(array $parts): string
+  {
+    return implode("\n", $parts);
+  }
+}
+
+class JsonRenderer implements Renderer
+{
+  public function renderTitle(string $title): string
+  {
+    return '"title": "' . $text . '"';
+  }
+
+  public function renderTextBlock(string $text): string
+  {
+    return '"text": "' . $text . '"';
+  }
+
+  public function renderImage(string $url): string
+  {
+    return '"img": "' . $url . '"';
+  }
+
+  public function renderLink(string $url, string $title): string
+  {
+    return '"link": {"href": "' . $title . '", "title": "' . $title . '"}';
+  }
+
+  public function renderHeader(): string
+  {
+    return '';
+  }
+
+  public function renderFooter(): string
+  {
+    return '';
+  }
+
+  public function renderParts(array $parts): string
+  {
+    return "{\n" . implode(",\n", array_filter($parts)) . "\n}";
+  }
+}
+
+function clientCode(Page $page)
+{
+  echo $page->view();
+}
+
+$HTMLRenderer = new HTMLRenderer;
+$JSONRenderer = new JsonRenderer;
+
+$page = new SimplePage($HTMLRenderer, "Home", "Welcome to our website!");
+echo "HTML view of a simple content page:\n";
+clientCode($page);
+echo "\n\n";
+
+$page->changeRenderer($JSONRenderer);
+echo "JSON view of a simple content page, rendered with the same client code:\n";
+clientCode($page);
+echo "\n\n";
+
+$product = new Product("123", "Stars Wars, episode1", "A long time ago in a galaxy far, far away...", "/images/stars-wars.jpeg", 39.95);
+
+$page = new ProductPage($HTMLRenderer, $product);
+echo "HTML view of a product page, same client code:\n";
+clientCode($page);
+echo "\n\n";
+
+$page->changeRenderer($JSONRenderer);
+echo "JSON view of a simple content page, with the same client code:\n";
+clientCode($page);
 ?>

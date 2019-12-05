@@ -42,13 +42,17 @@ Learning Design Patterns
 ### Bridge
 - [x] TS conceptual example
 - [x] TS example
-- [ ] PHP example (not done)
-- [ ] Java example
-- [ ] Swift example
+- [x] PHP example
+- [x] Swift example
 
 ### Composite
 - [x] TS conceptual example
+- [x] PHP example
+- [ ] C++ example
 
+### Decorator
+- [x] TS conceptual example
+- [x] C# example
 
 ## Later
 - [ ] Add UML schemes
