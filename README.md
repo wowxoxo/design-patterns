@@ -54,6 +54,11 @@ Learning Design Patterns
 - [x] TS conceptual example
 - [x] C# example
 
+### Facade
+- [x] TS conceptual example
+- [x] PHP example
+- [x] Java example
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
