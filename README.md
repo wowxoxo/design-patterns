@@ -59,6 +59,10 @@ Learning Design Patterns
 - [x] PHP example
 - [x] Java example
 
+### Flyweight
+- [x] TS conceptual example
+- [x] Java example
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
