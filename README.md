@@ -63,6 +63,10 @@ Learning Design Patterns
 - [x] TS conceptual example
 - [x] Java example
 
+### Proxy
+- [x] TS conceptual example
+- [x] Java example
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
