@@ -1,5 +1,5 @@
 /**
- * The interface declares a method for constructing a chain of gandlers.
+ * The interface declares a method for constructing a chain of handlers.
  */
 interface Handler {
   setNext(handler: Handler): Handler;
@@ -48,7 +48,7 @@ class SquirrelHandler extends AbstractHandler {
 }
 class DoglHandler extends AbstractHandler {
   public handle(request: string): string {
-    if (request === 'Nut') {
+    if (request === 'MeatBull') {
       return `Dog: I'll eat the ${request}`;
     }
     return super.handle(request);

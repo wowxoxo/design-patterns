@@ -69,6 +69,7 @@ Learning Design Patterns
 
 ### Chain of resposibility
 - [x] TS conceptual example
+- [x] Java several examples
 
 ## Later
 - [ ] Add UML schemes
