@@ -73,6 +73,7 @@ Learning Design Patterns
 
 ### Command
 - [x] TS saveral conceptual example
+- [x] Java example
 
 ## Later
 - [ ] Add UML schemes
