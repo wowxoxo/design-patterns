@@ -77,6 +77,7 @@ Learning Design Patterns
 
 ### Iterator
 - [x] TS conceptual example
+- [X] Java example
 
 ## Later
 - [ ] Add UML schemes
