@@ -79,6 +79,10 @@ Learning Design Patterns
 - [x] TS conceptual example
 - [X] Java example
 
+### Mediator
+- [x] TS conceptual example
+- [X] Java example
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
