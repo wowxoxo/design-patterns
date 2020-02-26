@@ -83,6 +83,9 @@ Learning Design Patterns
 - [x] TS conceptual example
 - [X] Java example
 
+#### Memento
+- [x] TS conceptual example
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
