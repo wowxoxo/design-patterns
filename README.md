@@ -89,6 +89,10 @@ Learning Design Patterns
 
 ### Observer
 - [x] TS conceptual example
+- [x] Java example
+
+### State
+- [x] TS example
 - [ ] Java example
 
 ## Later
