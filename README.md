@@ -75,6 +75,9 @@ Learning Design Patterns
 - [x] TS several conceptual example
 - [x] Java example
 
+### Interpreter
+- [x] Java example
+
 ### Iterator
 - [x] TS conceptual example
 - [X] Java example
@@ -93,6 +96,9 @@ Learning Design Patterns
 
 ### State
 - [x] TS saveral examples
+- [x] Java example
+
+### Null Object
 - [x] Java example
 
 ## Later
