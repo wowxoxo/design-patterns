@@ -92,8 +92,8 @@ Learning Design Patterns
 - [x] Java example
 
 ### State
-- [x] TS example
-- [ ] Java example
+- [x] TS saveral examples
+- [x] Java example
 
 ## Later
 - [ ] Add UML schemes
