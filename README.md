@@ -101,6 +101,10 @@ Learning Design Patterns
 ### Null Object
 - [x] Java example
 
+### Strategy
+- [x] TS example
+- [x] Java example
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
