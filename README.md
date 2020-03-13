@@ -105,6 +105,10 @@ Learning Design Patterns
 - [x] TS example
 - [x] Java example
 
+### Template Method
+- [x] TS example
+- [x] 2 Java examples
+
 ## Later
 - [ ] Add UML schemes
 - [ ] Add render images
